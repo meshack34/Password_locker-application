@@ -42,13 +42,13 @@ class User:
     return False
 
   @classmethod
-  def display_credentials(cls):
+  def display_myusers(cls):
     '''
     method that returns the credential list
     '''
     return cls.myuserlist
 
   @classmethod
-  def copy_pwd(cls, phone_number):
-    credential_found = Credential.find_by_phoneNumber(phone_number)
-    pyperclip.copy(credential_found.password)
+  def copyuser_mail(cls, phone_number):
+    credential_found = User.find_by_phoneNumber(phone_number)
+    pyperclip.copy(credential_found.email)

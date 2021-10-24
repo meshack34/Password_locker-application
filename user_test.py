@@ -66,7 +66,7 @@ class TestUser(unittest.TestCase):
                    "meshackkimutai34@gmail.com")
 
         test_user.newuser_save()
-        user_exists = User.user_exist("0748872955")
+        user_exists = User.checkcredential_exist("0748872955")
     
         self.assertTrue(user_exists)
 
@@ -74,7 +74,7 @@ class TestUser(unittest.TestCase):
     '''
     method that returns a list of all users saved
     '''
-    self.assertEqual(User.display_users(), User.user_list)
+    self.assertEqual(User.display_myusers(), User.myuserlist)
 
   def test_copy_email(self):
       '''
@@ -82,9 +82,9 @@ class TestUser(unittest.TestCase):
         '''
 
       self.createnew_user.newuser_save()
-      User.copy_email("0718908494")
+      User.copyuser_mail("0718908494")
 
-      self.assertEqual(self.new_user.email, pyperclip.paste())
+      self.assertEqual(self.createnew_user.email, pyperclip.paste())
 
 
 if __name__ == '__main__':
