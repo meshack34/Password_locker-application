@@ -33,7 +33,7 @@ class Credential:
 
 
   @classmethod
-  def checkcredential_exist(cls,):
+  def checkcredential_exist(cls, phonenumber):
     '''
     Method that checks if a credential exists from the credential list.
     Args:
