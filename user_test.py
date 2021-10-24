@@ -18,6 +18,10 @@ class TestUser(unittest.TestCase):
     self.createnew_user = User("meshack", "kimutai","meshkim", "0718908494",
                          "meshackkimutai34@gmail.com")  # creating user object
 
+  def tearDown(self):
+    '''clean up after each test case has run. '''
+    User.user_list = []
+
   def test_init(self):
     '''
     test_init test case to test if the object is initialized properly
