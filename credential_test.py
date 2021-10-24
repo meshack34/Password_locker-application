@@ -65,14 +65,13 @@ class TestCredential(unittest.TestCase):
   def test_find_credential_by_number(self):
    ''' check if can find credentials using phone numbers'''
    self.new_credential.save_credential()
-   test_credential = Credential(
+   testmy_credentials = Credential(
        "newmesh", "newpassword", "0748872955", "meshackkimutai345@gmail.com")  # add credential
-   test_credential.save_credential()
+   testmy_credentials.save_credential()
 
-   found_credential = Credential.find_credential_by_number("0714042437")
+   getallmy_credentials = Credential.find_by_phoneNumber("0748872955")
 
-   self.assertEqual(found_credential.credential_name,
-                     test_credential.credential_name)
+   self.assertEqual(getallmy_credentials.credential_userName, testmy_credentials.credential_userName)
 
 if __name__ == '__main__':
     unittest.main()

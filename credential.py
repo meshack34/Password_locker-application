@@ -23,3 +23,10 @@ class Credential:
     '''
 
     Credential.mycredential_list.remove(self)
+
+  @classmethod
+  def find_by_phoneNumber(cls, phonenumber):
+    ''' take a phonenumber and return matching credentials '''
+    for credential in cls.mycredential_list:
+      if credential.phonenumber == phonenumber:
+        return credential
