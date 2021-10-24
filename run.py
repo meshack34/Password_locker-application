@@ -1,13 +1,9 @@
 #!/usr/bin/env python3.6
 
 from credential import Credential
+from user import User
 
-#functions for user_account
-
-
-def create_user(fname, lname, phone, email):
-  '''
-  Function to create a new user
-  '''
-  new_user = User(fname, lname, phone, email)
-  return new_user
+def create_user(firstname, lastname, phonenumber, email):
+  ''' new user '''
+  mynew_user = User(firstname, lastname, phonenumber, email)
+  return mynew_user
