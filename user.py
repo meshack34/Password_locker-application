@@ -3,11 +3,9 @@ import pyperclip
 
 
 class User:
-  '''
-  Class that creates new intances of users
-  '''
+  ''' new intances of users '''
 
-  user_list = []  # empty list
+  myuserlist = []  # empty list
 
   def __init__(self, first_name, last_name, user_name, phone_number, email):
 
@@ -17,6 +15,6 @@ class User:
     self.phone_number = phone_number
     self.email = email
 
-  def save_user(self):
+  def newuser_save(self):
     ''' save new user '''
-    User.user_list.append(self)
+    User.myuserlist.append(self)
