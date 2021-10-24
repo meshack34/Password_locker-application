@@ -30,3 +30,18 @@ class Credential:
     for credential in cls.mycredential_list:
       if credential.phonenumber == phonenumber:
         return credential
+@classmethod
+def checkcredential_exist(cls, phonenumber):
+    ''' checks if a credential exist and return boolean '''
+    for credential in cls.mycredential_list:
+      if credential.phonenumber == phonenumber:
+        return True
+
+    return False
+
+@classmethod  
+def display_credentials(cls):
+    '''
+    method that returns the credential list
+    '''
+    return cls.mycredential_list
