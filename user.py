@@ -23,3 +23,10 @@ class User:
     '''deletes a saved user from the list '''
 
     User.myuserlist.remove(self)
+
+  @classmethod
+  def find_by_phoneNumber(cls, phone_number):
+    ''' take a phonenumber and return matching credentials '''
+    for credential in cls.myuserlist:
+      if credential.phone_number == phone_number:
+        return credential

@@ -40,15 +40,26 @@ class TestUser(unittest.TestCase):
     self.assertEqual(len(User.myuserlist), 2)
 
   def test_delete_user(self):
-    '''
-    test_delete_user to test if we can remove a user from our user list
-    '''
+    ''' delete a user from the list '''
     self.createnew_user.newuser_save()
     test_user = User("meshu", "kimu", "meshkim", "0748872955","meshackkimutai34@gmail.com")  # new user
     test_user.newuser_save()
-
     self.createnew_user.delete_myuser()  # Deleting a user object
     self.assertEqual(len(User.myuserlist), 1)
+
+  def test_find_user_by_number(self):
+    '''
+    test to check if we can find a user by phone number and display information
+    '''
+
+    self.createnew_user.newuser_save()
+    test_user = User("meshu", "kimu", "meshkim", "0748872955",
+                   "meshackkimutai34@gmail.com")
+    test_user.newuser_save()
+
+    found_user = User.find_by_phoneNumber("0748872955")
+
+    self.assertEqual(found_user.email, test_user.email)
 
 
 
