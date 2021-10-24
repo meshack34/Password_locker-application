@@ -18,3 +18,8 @@ class User:
   def newuser_save(self):
     ''' save new user '''
     User.myuserlist.append(self)
+
+  def delete_myuser(self):
+    '''deletes a saved user from the list '''
+
+    User.myuserlist.remove(self)
