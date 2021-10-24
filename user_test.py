@@ -17,7 +17,7 @@ class TestUser(unittest.TestCase):
 
   def tearDown(self):
     '''clean up after each test case has run. '''
-    User.user_list = []
+    User.myuserlist = []
 
   def test_init(self):
     '''  test if the object is initialized properly'''
@@ -30,7 +30,14 @@ class TestUser(unittest.TestCase):
   def test_save_user(self):
     '''test case to test if the user object is saved in list''' 
     self.createnew_user.newuser_save()  # saving the user
-    self.assertEqual(len(User.user_list), 0)
+    self.assertEqual(len(User.myuserlist), 1)
+
+  def test_add_multiple_user(self):
+    '''for multible user  '''
+    self.createnew_user.newuser_save()
+    test_user = User("meshu", "kimu", "meshkim","0748872955", "meshackkimutai34@gmail.com")  # new user
+    test_user.newuser_save()
+    self.assertEqual(len(User.myuserlist), 2)
 
 
 if __name__ == '__main__':
