@@ -46,11 +46,33 @@ class TestCredential(unittest.TestCase):
     '''
     self.new_credential.save_credential()
     test_credential = Credential(
-        "newmesh", "newpassword", "0748872955","meshackkimutai345@gmail.com")  # new credential
+        "newmesh", "newpassword", "0748872955","meshackkimutai345@gmail.com")  # add credential
     test_credential.save_credential()
-    self.new_credential.delete_credentials()  # remove a credential object
+    self.new_credential.delete_credentials()  # remove the credential object
     self.assertEqual(len(Credential.mycredential_list), 1)
 
+  def test_save_multiple_credential(self):
+    '''
+    test_save_multiple_credential to check if we can save multiple contact
+    objects to our contact list
+    '''
+    self.new_credential.save_credential()
+    test_credential = Credential(
+        "newmesh", "newpassword", "0748872955", "meshackkimutai345@gmail.com")  # add credential
+    test_credential.save_credential()
+    self.assertEqual(len(Credential.mycredential_list), 2)
+
+  def test_find_credential_by_number(self):
+   ''' check if can find credentials using phone numbers'''
+   self.new_credential.save_credential()
+   test_credential = Credential(
+       "newmesh", "newpassword", "0748872955", "meshackkimutai345@gmail.com")  # add credential
+   test_credential.save_credential()
+
+   found_credential = Credential.find_credential_by_number("0714042437")
+
+   self.assertEqual(found_credential.credential_name,
+                     test_credential.credential_name)
 
 if __name__ == '__main__':
     unittest.main()
