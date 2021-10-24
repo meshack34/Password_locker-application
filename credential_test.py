@@ -45,8 +45,7 @@ class TestCredential(unittest.TestCase):
     To test if we can remove a credential from list
     '''
     self.new_credential.save_credential()
-    test_credential = Credential(
-        "newmesh", "newpassword", "0748872955","meshackkimutai345@gmail.com")  # add credential
+    test_credential = Credential("newmesh", "newpassword", "0748872955","meshackkimutai345@gmail.com")  # add credential
     test_credential.save_credential()
     self.new_credential.delete_credentials()  # remove the credential object
     self.assertEqual(len(Credential.mycredential_list), 1)
@@ -65,8 +64,7 @@ class TestCredential(unittest.TestCase):
   def test_find_credential_by_number(self):
    ''' check if can find credentials using phone numbers'''
    self.new_credential.save_credential()
-   testmy_credentials = Credential(
-       "newmesh", "newpassword", "0748872955", "meshackkimutai345@gmail.com")  # add credential
+   testmy_credentials = Credential(   "newmesh", "newpassword", "0748872955", "meshackkimutai345@gmail.com")  # add credential
    testmy_credentials.save_credential()
 
    getallmy_credentials = Credential.find_by_phoneNumber("0748872955")
@@ -84,11 +82,21 @@ class TestCredential(unittest.TestCase):
     self.assertTrue(check_mycredentialsexist)
 
   def test_display_all_credentials(self):
-    ''' display a list of all credentials saved
+    '''
+    method that returns a list of all credentials saved
     '''
     self.assertEqual(Credential.display_credentials(),
                      Credential.mycredential_list)
 
+  def test_copy_email(self):
+      '''
+        Test to confirm that we are copying the email address from a found credential
+        '''
+
+      self.new_credential.save_credential()
+      Credential.copy_pwd("0718908494")
+
+      self.assertEqual(self.new_credential.password, pyperclip.paste())
 
 
 if __name__ == '__main__':
