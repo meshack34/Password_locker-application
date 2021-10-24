@@ -61,6 +61,30 @@ class TestUser(unittest.TestCase):
 
     self.assertEqual(found_user.email, test_user.email)
 
+  def test_user_exists(self):
+        test_user = User("meshu", "kimu", "meshkim", "0748872955",
+                   "meshackkimutai34@gmail.com")
+
+        test_user.newuser_save()
+        user_exists = User.user_exist("0748872955")
+    
+        self.assertTrue(user_exists)
+
+  def test_display_all_users(self):
+    '''
+    method that returns a list of all users saved
+    '''
+    self.assertEqual(User.display_users(), User.user_list)
+
+  def test_copy_email(self):
+      '''
+        Test to confirm that we are copying the email address from a found user
+        '''
+
+      self.createnew_user.newuser_save()
+      User.copy_email("0718908494")
+
+      self.assertEqual(self.new_user.email, pyperclip.paste())
 
 
 if __name__ == '__main__':

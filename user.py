@@ -32,11 +32,11 @@ class User:
         return credential
 
   @classmethod
-  def checkcredential_exist(cls, phonenumber):
+  def checkcredential_exist(cls, phone_number):
     '''check if it exist and return boolean
     '''
-    for credential in cls.mycredential_list:
-      if credential.phonenumber == phonenumber:
+    for credential in cls.myuserlist:
+      if credential.phone_number == phone_number:
         return True
 
     return False
@@ -46,9 +46,9 @@ class User:
     '''
     method that returns the credential list
     '''
-    return cls.mycredential_list
+    return cls.myuserlist
 
   @classmethod
-  def copy_pwd(cls, phonenumber):
-    credential_found = Credential.find_by_phoneNumber(phonenumber)
+  def copy_pwd(cls, phone_number):
+    credential_found = Credential.find_by_phoneNumber(phone_number)
     pyperclip.copy(credential_found.password)
