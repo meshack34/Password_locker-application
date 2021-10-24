@@ -1,15 +1,25 @@
+import pyperclip
+
 class Credential:
-    """
-    Class that generates new instances of credentials
-    """
+  """
+  class for new credentials for credentials
+  """
+  mycredential_list = []
 
-    Mycredentials = []  # Empty contact list
+  def __init__(self, credential_userName, password, phonenumber, credential_email):
+    self.credential_userName = credential_userName
+    self.password = password
+    self.phonenumber = phonenumber
+    self.credential_email = credential_email
 
-    def __init__(self, first_name, last_name, number, email):
+  def save_credential(self):
+    '''save_credential method saves credential object into the mycredential_list
+    '''
+    Credential.mycredential_list.append(self)
 
-      # docstring removed for simplicity
+  def delete_credentials(self):
+    '''
+    remove the saved credential from the list
+    '''
 
-        self.first_name = first_name
-        self.last_name = last_name
-        self.phone_number = number
-        self.email = email
+    Credential.mycredential_list.remove(self)
