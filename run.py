@@ -214,6 +214,40 @@ def main():
       else:
         print('create account')
 
+ #delete credential
+    elif short_code == 'delete-c':
+
+      print("Enter the number you want to delete password from")
+
+      delete_number = input()
+      print("-"*10)
+      print("-"*60)
+      if check_existing_credential(delete_number):
+        dl_pwd = find_credential(delete_number)
+        print(
+            f"<<{dl_pwd.credential_name}>> with password <<{dl_pwd.password}>> will be deleted")
+        dl_pwd = del_credential(dl_pwd)
+        print("Credential deleted successfully")
+
+      else:
+        print("That credential does not exist")
+
+    #copy email
+    elif short_code == 'copy-e':
+
+      print("Enter the number you want to copy email from")
+
+      find_number = input()
+      print("-"*10)
+      print("-"*60)
+      if check_existing_user(find_number):
+        email_user = find_user(find_number)
+        print(f"{email_user.first_name} {email_user.last_name}  {email_user.email} email address will be copied")
+        email_user = copyuser_mail(email_user, find_number)
+        print("Email address copied successfully")
+
+      else:
+        print("That user does not exist")
 
 
     #Login code
