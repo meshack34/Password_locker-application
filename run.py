@@ -199,22 +199,20 @@ def main():
       else:
         print("welcme!!")
         print(f"Welcome {f_name} {l_name} to your account")
-        print("Use the following command to do some action with your account: \n create - command to create new account with user choosing own password  \n create-auto - command to create account with auto generated password \n display-u -command to display user details \n find-u - command to search for user \n delete-u - command to delete user \n copy-e - command to copy email address \n display-c - command to display credentials \n find-c - command to search credentials \n delete-c - command to delete credentials \n copy-pwd -command to copy password ")
+        print("Use the codes: \n ca - command to create new account with user choosing own password  \n auto - command to create account with auto generated password \n userdetails -command to display user details \n show - command to search for user \n delete-u - command to delete user \n copy-e - command to copy email address \n display-c - command to display credentials \n find-c - command to search credentials \n delete-c - command to delete credentials \n copy-pwd -command to copy password ")
 
-    elif short_code == 'display-u':
+    elif short_code == 'userdetails':
 
       if display_users():
-        print("Here is a list of all your users")
+        print("List of all your users")
         print('\n')
 
         for user in display_users():
-          print(f"{user.first_name} {user.last_name} .....{user.phone_number}")
+          print( f"{user.first_name} {user.last_name} {user.user_name}{user.phone_number}")
 
-        print('\n')
+  
       else:
-        print('\n')
-        print("You dont seem to have any users saved yet")
-        print('\n')
+        print('create account')
 
 
 
