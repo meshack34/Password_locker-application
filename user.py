@@ -24,6 +24,17 @@ class User:
 
     User.myuserlist.remove(self)
 
+
+  @classmethod
+  def checkuser_exist(cls, phone_number):
+    '''check if user exist and return boolean
+    '''
+    for credential in cls.myuserlist:
+      if credential.phone_number == phone_number:
+        return True
+
+    return False
+
   @classmethod
   def find_by_phoneNumber(cls, phone_number):
     ''' take a phonenumber and return matching credentials '''
@@ -31,15 +42,6 @@ class User:
       if credential.phone_number == phone_number:
         return credential
 
-  @classmethod
-  def checkcredential_exist(cls, phone_number):
-    '''check if it exist and return boolean
-    '''
-    for credential in cls.myuserlist:
-      if credential.phone_number == phone_number:
-        return True
-
-    return False
 
   @classmethod
   def display_myusers(cls):

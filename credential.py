@@ -55,6 +55,6 @@ class Credential:
     return cls.mycredential_list
 
   @classmethod
-  def copy_pwd(cls, phonenumber):
+  def copymypasswod(cls, phonenumber):
     credential_found = Credential.find_by_phoneNumber(phonenumber)
     pyperclip.copy(credential_found.password)
