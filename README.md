@@ -13,9 +13,9 @@ This is an amazing application that will help us manage our passwords and
 </td>
 </tr>
 </table>
-*********
 ### The user Interface
 ![alt text](https://github.com/kimutaimeshack/Password_locker-application/blob/main/locker.png)
+
 *********
 
 
