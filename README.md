@@ -1,5 +1,5 @@
 # Password_Locker-application
-
+*********
 ## Author
 by [MESHACK KIMUTAI](https://github.com/kimutaimeshack?tab=repositories)
 *********
@@ -8,12 +8,15 @@ by [MESHACK KIMUTAI](https://github.com/kimutaimeshack?tab=repositories)
 <table>
 <tr>
 <td>
-This is an application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+This is an amazing application that will help us manage our passwords and
+  even generate new passwords for us
 </td>
 </tr>
 </table>
+
+*********
 ## Development
+
 ### Prerequisites
 * Text editor eg Visual Studio Code
 * You need to have git installed. You can install it with the following command in your terminal
