@@ -6,9 +6,9 @@ import math
 import random
 
 
-def mynew_user(firstname, lastname, username, phonenumber, email):
+def createnew_user(firstname, lastname, user_name,phonenumber, email):
   ''' new user '''
-  mynew_user = User(firstname, lastname,username, phonenumber, email)
+  mynew_user = User(firstname, lastname, user_name, phonenumber, email)
   return mynew_user
 
 
@@ -55,11 +55,10 @@ def display_users():
 
 
 #The user credential details
-def create_credential(myfirstname, mylastname, myusername, myphonenumber, myemail):
+def create_credential(credential_userName, password, phonenumber, credential_email):
+  '''Function to create a new credential
   '''
-  Function to create a new credential
-  '''
-  new_credential = Credential( myfirstname, mylastname, myusername, myphonenumber, myemail)
+  new_credential = Credential(credential_userName, password, phonenumber, credential_email)
   return new_credential
 
 
@@ -118,29 +117,32 @@ def main():
       print("New user account")
       print("-"*10)
 
-      print("First name")
-      myfirstname = input()
+    print("First name ....")
+    f_name = input()
 
-      print("Enter  last name :")
-      mylastname = input()
-      print("Enter  phone number :")
-      myphonenumber = input()
-
-      print("Enter  email address :")
-      myemail = input()
-      print("-"*10)
-      print("-"*60)
-
-      print("Enter username:")
-      myusername = input()
-      print("Enter password :")
-      mypassword = input()
-
-     
-
+    print("Last name ...")
+    l_name = input() 
+    print("username ...")
+    u_name = input()
+    print("Phone number ...")
+    p_number = input()
+    print("password  ...")
+    m_password = input()
+    print("Email address ...")
+    e_address = input()
+    newuser_save(createnew_user(f_name, l_name, u_name, p_number, e_address))
+    print('\n')
+    print(f"New Contact {f_name} {l_name} created")
+    print('\n')
+    print("-"*10)
+      # create and save new credential.
+    save_credential(create_credential(u_name, m_password, p_number, e_address))
+    print(
+        f"New Credentials: username = {u_name} , password = {m_password} created")
+    print("-"*16)
+    print("Enter command login -to login to your account")
       
 
 
 if __name__ == '__main__':
-
   main()
