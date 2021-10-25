@@ -199,7 +199,7 @@ def main():
       else:
         print("welcme!!")
         print(f"Welcome {f_name} {l_name} to your account")
-        print("Use the codes: \n ca - command to create new account with user choosing own password  \n auto - command to create account with auto generated password \n userdetails -command to display user details \n show - command to search for user \n delete-u - command to delete user \n copy-e - command to copy email address \n display-c - command to display credentials \n find-c - command to search credentials \n delete-c - command to delete credentials \n copy-pwd -command to copy password ")
+        print("Use the codes: \n ca - command to create new account with user choosing own password  \n auto - command to create account with auto generated password \n userdetails -command to display user details \n delete-u - command to delete user \n copy-e - command to copy email address \n delete-c - command to delete credentials ")
 
     elif short_code == 'userdetails':
 
@@ -223,14 +223,14 @@ def main():
       print("-"*10)
       print("-"*60)
       if check_existing_credential(delete_number):
-        dl_pwd = find_credential(delete_number)
+        newpasspwd = find_credential(delete_number)
         print(
-            f"<<{dl_pwd.credential_name}>> with password <<{dl_pwd.password}>> will be deleted")
-        dl_pwd = del_credential(dl_pwd)
-        print("Credential deleted successfully")
+            f"<<{newpass.credential_name}>> with password <<{newpass.password}>> will be deleted")
+        newpass = del_credential(newpass)
+        print(" deleted successfully")
 
       else:
-        print("That credential does not exist")
+        print("credential does not exist")
 
     #copy email
     elif short_code == 'copy-e':
