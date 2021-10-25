@@ -35,5 +35,5 @@ To access this project on your local files, you can clone it using these steps
 *********
 ## License and Copyright
 THIS PROJECT IS UNDER [MIT](LICENSE) LICENSE
-Copyright &copy; 2021 **[meshack kimutai](https://github.com/ngetichnick)**
+Copyright &copy; 2021 **[meshack kimutai](https://github.com/kimutaimeshack?tab=repositories)**
 ***********
